@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Linked JavaScript with defer -->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -140,31 +142,24 @@
     </div>
 </section>
 
+<!-- Interactive Projects Section -->
 <section id="projects">
     <div class="section-header">
         <h2>Featured Projects</h2>
         <div class="underline"></div>
     </div>
 
-    <div class="cards">
-        <div class="card">
-            <div class="card-tag">Web Dev</div>
-            <h3>Portfolio Website</h3>
-            <p>A sleek, responsive personal portfolio built with modern HTML5 & CSS3 layout techniques.</p>
-        </div>
-
-        <div class="card">
-            <div class="card-tag">Interactive</div>
-            <h3>Music Player</h3>
-            <p>A web-based custom music player interface with functional play state animations.</p>
-        </div>
-
-        <div class="card">
-            <div class="card-tag">Utility</div>
-            <h3>Web Calculator</h3>
-            <p>A clean, functional calculator application built for fast calculations on web browsers.</p>
-        </div>
+    <!-- Controls -->
+    <div class="filter-controls" id="filterControls">
+        <button class="filter-btn active" data-category="All">All</button>
+        <button class="filter-btn" data-category="Web Dev">Web Dev</button>
+        <button class="filter-btn" data-category="Interactive">Interactive</button>
+        <button class="filter-btn" data-category="Utility">Utility</button>
+        <button class="filter-btn" data-category="Security">Security</button>
     </div>
+
+    <!-- Empty Container to be populated dynamically via JavaScript -->
+    <div class="cards" id="projectsContainer"></div>
 </section>
 
 <section id="contact">
@@ -185,26 +180,6 @@
 <footer>
     <p>© 2026 Jeric P. Gurrobat | Designed with HTML & CSS</p>
 </footer>
-
-<!-- JavaScript for Mobile Menu Toggle -->
-<script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    // Toggle menu visibility when clicking 3-line icon
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
-
-    // Automatically close menu when clicking a link
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-        });
-    });
-</script>
 
 </body>
 </html>
