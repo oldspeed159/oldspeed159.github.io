@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Linked JavaScript with defer -->
+    <!-- Linked external JS with defer (Checklist Item 4) -->
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -142,23 +142,32 @@
     </div>
 </section>
 
-<!-- Interactive Projects Section -->
+<!-- Interactive Projects Section (Checklist Items 1, 2, 3) -->
 <section id="projects">
     <div class="section-header">
         <h2>Featured Projects</h2>
         <div class="underline"></div>
     </div>
 
-    <!-- Controls -->
-    <div class="filter-controls" id="filterControls">
-        <button class="filter-btn active" data-category="All">All</button>
-        <button class="filter-btn" data-category="Web Dev">Web Dev</button>
-        <button class="filter-btn" data-category="Interactive">Interactive</button>
-        <button class="filter-btn" data-category="Utility">Utility</button>
-        <button class="filter-btn" data-category="Security">Security</button>
+    <!-- Search Input and Filter Controls (Checklist Item 3) -->
+    <div class="controls-wrapper">
+        <div class="search-box">
+            <label for="projectSearch" class="sr-only">Search projects</label>
+            <input type="search" id="projectSearch" placeholder="Search projects by title or tech..." />
+        </div>
+
+        <div class="filter-controls" id="filterControls">
+            <button class="filter-btn active" data-category="All">All</button>
+            <button class="filter-btn" data-category="Web Dev">Web Dev</button>
+            <button class="filter-btn" data-category="Interactive">Interactive</button>
+            <button class="filter-btn" data-category="Utility">Utility</button>
+            <button class="filter-btn" data-category="Security">Security</button>
+        </div>
     </div>
 
-    <!-- Empty Container to be populated dynamically via JavaScript -->
+    <p id="projectCount" class="project-count"></p>
+
+    <!-- Empty Container populated exclusively by JS (Checklist Item 2) -->
     <div class="cards" id="projectsContainer"></div>
 </section>
 
